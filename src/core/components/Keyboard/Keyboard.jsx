@@ -2,9 +2,10 @@ import React, { useMemo } from "react";
 import cn from "classnames";
 
 import "./style.scss";
+import { KeyboardButton } from "../components";
 
 export const Keyboard = (props) => {
-    const { onClick, show, keyboardLayout } = props;
+    const { onChange, value, show, keyboardLayout } = props;
 
     const classes = useMemo(() => cn({
         'keyboard': true,
@@ -13,13 +14,22 @@ export const Keyboard = (props) => {
 
     const handleClick = (keyObject) => {
         if (keyObject.type === "char") {
-            return onClick(keyObject.value);
+            return onChange(value + keyObject.value);
         }
 
         if (keyObject.type === "action") {
             const { actionType } = keyObject;
             
             // Добавить реализацию для действий
+            switch(actionType) {
+                case 'backSpace':
+                    const updatedValue = value.slice(0, value.length - 1);
+                    onChange(updatedValue);
+                    break;
+                
+                case 'shift':
+                    break;
+            }
 
             return;
         }
@@ -30,13 +40,12 @@ export const Keyboard = (props) => {
             {keyboardLayout.map((row, i) => (
                 <div className="keyboard-row" key={`row-${i}`}>
                     {row.map((rowKey, i) => (
-                        <button 
-                            className="keyboard-key"
+                        <KeyboardButton
                             onClick={() => handleClick(rowKey)}
                             key={`${rowKey.value}-${rowKey.type}-${i}`}
                         >
                             {rowKey.value}
-                        </button>
+                        </KeyboardButton>
                     ))}
                 </div>
             ))}

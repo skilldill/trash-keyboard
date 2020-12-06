@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Panel, PanelHeader, PanelHeaderBack } from "@vkontakte/vkui";
+import React, { useContext, useState } from "react";
+import { Panel, PanelHeader, PanelHeaderBack, Div } from "@vkontakte/vkui";
 
 import { PanelRoutingsContext } from "../../core/context";
 import { Keyboard } from "../../core/components";
@@ -52,6 +52,8 @@ const TEST_LAYOUT = [
 export const GameArea = ({ id }) => {
     const { setActivePanel } = useContext(PanelRoutingsContext);
 
+    const [typedText, setTypedText] = useState('');
+
     const handleBack = () => {
         setActivePanel(PANEL_NAMES.start);
     }
@@ -61,7 +63,14 @@ export const GameArea = ({ id }) => {
             <PanelHeader
                 left={<PanelHeaderBack onClick={handleBack} />}
             >Игра</PanelHeader>
-            <Keyboard keyboardLayout={TEST_LAYOUT} />
+            <Div>
+                <h1>{typedText}</h1>
+            </Div>
+            <Keyboard 
+                onChange={setTypedText} 
+                value={typedText}
+                keyboardLayout={TEST_LAYOUT}
+            />
         </Panel>
     )
 }
