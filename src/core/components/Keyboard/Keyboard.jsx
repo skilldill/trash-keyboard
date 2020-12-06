@@ -52,18 +52,12 @@ export const Keyboard = (props) => {
             <div className="keyboard-row keyboard-row-bottom">
                 <div className="keyboard-key keyboard-key-mock"></div>
                 <div className="keyboard-key keyboard-key-mock"></div>
-                <button 
-                    className="keyboard-key"
-                    onClick={() => handleClick({ type: "char", value: "," })}
-                >,</button>
+                <KeyboardButton onClick={() => handleClick({ type: "char", value: "," })}>,</KeyboardButton>
                 <button 
                     className="keyboard-key keyboard-key-space"
                     onClick={() => handleClick({ type: "char", value: " " })}
                 ></button>
-                <button 
-                    className="keyboard-key"
-                    onClick={() => handleClick({ type: "char", value: "." })}
-                >.</button>
+                <KeyboardButton onClick={() => handleClick({ type: "char", value: "." })}>.</KeyboardButton>
                 <div className="keyboard-key keyboard-key-mock"></div>
                 <div className="keyboard-key keyboard-key-mock"></div>
             </div>
