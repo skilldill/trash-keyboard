@@ -1,0 +1,41 @@
+.keyboard {
+    background: linear-gradient(180deg, #EB9797 0%, #675EA2 100%);
+
+    &-row {
+        display: flex;
+        padding: 4px 13px;
+    }
+
+    &-row-bottom {
+
+    }
+
+    &-key {
+        color: #555555;
+        flex: 1;
+        height: 54px;
+        margin-right: 3px;
+        font-size: 30px;
+        padding: 0;
+        font-weight: 200;
+        border: none;
+        border-radius: 5px;
+        background-color: #F0F6FF;
+
+        &:last-child {
+            margin-right: 0px
+        }
+    }
+
+    &-key-mock {
+        background-color: transparent;
+    }
+
+    &-key-space {
+        flex: 5.4;
+    }
+}
+
+.keyboard-show {
+    
+}
