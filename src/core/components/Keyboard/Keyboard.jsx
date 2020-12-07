@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import cn from "classnames";
 
 import "./style.scss";
-import { KeyboardButton } from "../components";
+import { KeyboardButton } from "./components";
 
 export const Keyboard = (props) => {
     const { onChange, value, show, keyboardLayout } = props;

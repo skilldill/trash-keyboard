@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useMemo, useState } from "react";
 import { Panel, PanelHeader, PanelHeaderBack, Div, Group, Header } from "@vkontakte/vkui";
 
 import { PanelRoutingsContext } from "../../core/context";
-import { Keyboard } from "../../core/components";
+import { Keyboard, RoulleteKeyboard } from "../../core/components";
 import { generateLayout } from "../../core/LayoutsGenerator";
 import { PANEL_NAMES } from "../";
-import { GAME_TYPES } from "../../shared/constants";
+import { GAME_TYPES, MAX_LAYOUTS } from "../../shared/constants";
 import { getRandomInt, timerSelfDestroy } from "../../shared/utils";
 
 export const GameArea = ({ id }) => {
@@ -26,7 +26,7 @@ export const GameArea = ({ id }) => {
     }
 
     useEffect(() => {
-        const layoutId = getRandomInt(1, 5);
+        const layoutId = getRandomInt(1, MAX_LAYOUTS);
         setTypeLayoutId(layoutId);
     }, [])
 
@@ -34,7 +34,7 @@ export const GameArea = ({ id }) => {
         if (gameType === GAME_TYPES.dinamycRandom) {
             timerSelfDestroy(1000, () => {
                 if (gameTiming % 2 === 0) {
-                    setTypeLayoutId(getRandomInt(1, 5));
+                    setTypeLayoutId(getRandomInt(1, MAX_LAYOUTS));
                 }
                 setGameTimnig(gameTiming + 1);
             });
@@ -42,7 +42,7 @@ export const GameArea = ({ id }) => {
 
         if (gameType === GAME_TYPES.initialRandom) {
             if (typeLayoutId === 0) {
-                setTypeLayoutId(getRandomInt(1, 5));
+                setTypeLayoutId(getRandomInt(1, MAX_LAYOUTS));
             }
 
             timerSelfDestroy(1000, () => {
@@ -61,25 +61,40 @@ export const GameArea = ({ id }) => {
 
     const layout = useMemo(() => generateLayout(typeLayoutId), [typeLayoutId]);
 
-    return (
-        <Panel id={id}>
-            <PanelHeader
-                left={<PanelHeaderBack onClick={handleBack} />}
-            >Игра</PanelHeader>
-            <Group header={<Header mode="secondary">Напишите "привет"</Header>}>
-                <Div>{typedText}</Div>
-            </Group>
-            {!!result.length && (
-                <Group header={<Header mode="secondary">Результат</Header>}>
-                    <Div>{result}</Div>
-                </Group>)
-            }
+    const resultGroup = useMemo(() => !!result.length && (
+        <Group header={<Header mode="secondary">Результат</Header>}>
+            <Div>{result}</Div>
+        </Group>
+    ), [result.length])
+    
+    const keyboard = useMemo(() => {
+        if (gameType === GAME_TYPES.roulletKeyboard) {
+            return <RoulleteKeyboard show={showKeyboard} onChange={setTypedText} value={typedText} />
+        }
+
+        return (
             <Keyboard 
                 onChange={setTypedText} 
                 value={typedText}
                 keyboardLayout={layout}
                 show={showKeyboard}
             />
+        )
+    }, [setTypedText, typedText, layout, showKeyboard])
+
+    return (
+        <Panel id={id}>
+            <PanelHeader
+                left={<PanelHeaderBack onClick={handleBack} />}
+            >Игра</PanelHeader>
+            
+            <Group header={<Header mode="secondary">Напишите "привет"</Header>}>
+                <Div>{typedText}</Div>
+            </Group>
+
+            {resultGroup}
+            
+            {keyboard}
         </Panel>
     )
 }

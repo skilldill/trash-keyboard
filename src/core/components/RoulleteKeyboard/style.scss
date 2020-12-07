@@ -1,0 +1,26 @@
+.roullete-keyboard {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 232px;
+  background: linear-gradient(180deg, #EB9797 0%, #675EA2 100%);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  .roullete {
+    transition: all .3s;
+    
+    &-key {
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      color: white;
+      font-size: 40px;
+      text-align: center;
+    }
+  }
+}
