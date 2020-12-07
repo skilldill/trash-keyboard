@@ -9,18 +9,19 @@
   display: flex;
   justify-content: center;
 
-  .roullete {
-    transition: all .3s;
-    
-    &-key {
-      display: block;
-      margin: 0;
-      padding: 0;
-      border: none;
-      background-color: transparent;
-      color: white;
-      font-size: 40px;
-      text-align: center;
-    }
+  .line {
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    right: 0;
+    left: 0;
+  }
+
+  .line-top {
+    top: 90px;
+  }
+
+  .line-bottom {
+    bottom: 90px;
   }
 }
