@@ -4,3 +4,5 @@ export const GAME_TYPES = {
     roulletKeyboard: 'roulletKeyboard',
     default: 'default'
 }
+
+export const MAX_LAYOUTS = 5;
