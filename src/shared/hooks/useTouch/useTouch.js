@@ -1,4 +1,4 @@
-import { useState, useCallback, TouchEvent } from "react";
+import { useState, useCallback } from "react";
 
 export const useTouch = (config) => {
   let initialConfig = { startX: 0, startY: 0, translateX: 0, translateY: 0, transition: false };
