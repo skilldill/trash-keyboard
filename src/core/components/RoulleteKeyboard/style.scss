@@ -8,6 +8,8 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
+  transition: all .3s;
+  transform: translateY(260px);
 
   .line {
     position: absolute;
@@ -24,4 +26,8 @@
   .line-bottom {
     bottom: 84px;
   }
+}
+
+.roullete-keyboard-show {
+  transform: translateY(0px);
 }

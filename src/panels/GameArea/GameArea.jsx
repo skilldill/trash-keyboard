@@ -49,6 +49,12 @@ export const GameArea = ({ id }) => {
                 setGameTimnig(gameTiming + 1);
             });
         }
+
+        if (gameType === GAME_TYPES.roulletKeyboard) {
+            timerSelfDestroy(1000, () => {
+                setGameTimnig(gameTiming + 1);
+            });
+        }
        
     }, [gameTiming])
 
@@ -80,7 +86,7 @@ export const GameArea = ({ id }) => {
                 show={showKeyboard}
             />
         )
-    }, [setTypedText, typedText, layout, showKeyboard])
+    }, [setTypedText, typedText, layout, showKeyboard, gameType])
 
     return (
         <Panel id={id}>

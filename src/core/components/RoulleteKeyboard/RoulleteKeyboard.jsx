@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
+import cn from "classnames";
 
 import "./style.scss";
 import { Roullete } from "./components";
@@ -43,8 +44,13 @@ export const RoulleteKeyboard = (props) => {
     }
   }
 
+  const classes = useMemo(() => cn({
+    'roullete-keyboard': true,
+    'roullete-keyboard-show': show
+  }), [show])
+
   return (
-    <div className="roullete-keyboard">
+    <div className={classes}>
       <div className="line line-top"></div>
       <div className="line line-bottom"></div>
       <Roullete layout={[{value: '_', type: 'char'}]} onClick={handleChange} />
