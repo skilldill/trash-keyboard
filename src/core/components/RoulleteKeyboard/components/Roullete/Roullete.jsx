@@ -4,7 +4,7 @@ import "./style.scss";
 import { useTouch } from "../../../../../shared/hooks";
 
 export const Roullete = (props) => {
-  const { layout, onClick } = props;
+  const { layout, onClick, startPos } = props;
   
   const {
     stateTranslateY,
@@ -21,7 +21,11 @@ export const Roullete = (props) => {
   const [oldY, setOldY] = useState(84);
 
   useEffect(() => {
-    setStateTranslateY(84);
+    if (!!startPos) {
+      setStateTranslateY(84 - (startPos * 62));
+    } else {
+      setStateTranslateY(84);
+    }
   }, [])
 
 
@@ -62,11 +66,11 @@ export const Roullete = (props) => {
     transition : stateTransition ? "all .3s" : "none"
   }), [stateTranslateY])
 
-  const handleClick = (keyValue, keyId) => {
+  const handleClick = (keyObj, keyId) => {
     const currentFocusId = -(stateTranslateY - 84) / 62;
 
     if (keyId === currentFocusId) {
-      onClick(keyValue);
+      onClick(keyObj);
     }
   }
 
@@ -78,14 +82,14 @@ export const Roullete = (props) => {
       onTouchMove={handleTouchMove()}
       onTouchEnd={handleTouchEnd(handleDragEnd)}
     >
-      {layout.map((keyValue, i) => (
+      {layout.map((keyObj, i) => (
         <div 
           className="roullete-key" 
-          key={`${keyValue}-${i}`}
-          onClick={() => handleClick(keyValue, i)}
+          key={`${keyObj.value}-${i}`}
+          onClick={() => handleClick(keyObj, i)}
         >
           <span>
-            {keyValue}
+            {keyObj.value}
           </span>
         </div>
       ))}
