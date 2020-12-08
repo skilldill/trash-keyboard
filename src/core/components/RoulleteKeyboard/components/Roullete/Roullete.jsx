@@ -32,10 +32,6 @@ export const Roullete = (props) => {
 
   const lengthLayoutLent = useMemo(() => (62 * (layout.length - 1)) - 84, [layout]);
 
-  const handleDragMove = () => {
-    bridge.send("VKWebAppTapticSelectionChanged", {});
-  }
-
   const handleDragEnd = () => {
     if (stateTranslateY > -lengthLayoutLent && stateTranslateY < 84) {
       const diff = (stateTranslateY - 84) % 62;
@@ -84,7 +80,7 @@ export const Roullete = (props) => {
       className="roullete" 
       style={dragStyle}
       onTouchStart={handleTouchStart()}
-      onTouchMove={handleTouchMove(handleDragMove)}
+      onTouchMove={handleTouchMove()}
       onTouchEnd={handleTouchEnd(handleDragEnd)}
     >
       {layout.map((keyObj, i) => (
