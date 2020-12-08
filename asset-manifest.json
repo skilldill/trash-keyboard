@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/trash-keyboard/static/css/main.7f9ba981.chunk.css",
-    "main.js": "/trash-keyboard/static/js/main.3498a5a5.chunk.js",
-    "main.js.map": "/trash-keyboard/static/js/main.3498a5a5.chunk.js.map",
+    "main.css": "/trash-keyboard/static/css/main.508f1e6f.chunk.css",
+    "main.js": "/trash-keyboard/static/js/main.7bc42d2e.chunk.js",
+    "main.js.map": "/trash-keyboard/static/js/main.7bc42d2e.chunk.js.map",
     "runtime-main.js": "/trash-keyboard/static/js/runtime-main.972992a9.js",
     "runtime-main.js.map": "/trash-keyboard/static/js/runtime-main.972992a9.js.map",
     "static/css/2.cdee455b.chunk.css": "/trash-keyboard/static/css/2.cdee455b.chunk.css",
-    "static/js/2.eecefb21.chunk.js": "/trash-keyboard/static/js/2.eecefb21.chunk.js",
-    "static/js/2.eecefb21.chunk.js.map": "/trash-keyboard/static/js/2.eecefb21.chunk.js.map",
+    "static/js/2.8f5d0082.chunk.js": "/trash-keyboard/static/js/2.8f5d0082.chunk.js",
+    "static/js/2.8f5d0082.chunk.js.map": "/trash-keyboard/static/js/2.8f5d0082.chunk.js.map",
     "index.html": "/trash-keyboard/index.html",
-    "precache-manifest.26b1e08630c2bd8737a786b363506326.js": "/trash-keyboard/precache-manifest.26b1e08630c2bd8737a786b363506326.js",
+    "precache-manifest.5f88682772eddcbf457d9ea93632277c.js": "/trash-keyboard/precache-manifest.5f88682772eddcbf457d9ea93632277c.js",
     "service-worker.js": "/trash-keyboard/service-worker.js",
     "static/css/2.cdee455b.chunk.css.map": "/trash-keyboard/static/css/2.cdee455b.chunk.css.map",
-    "static/css/main.7f9ba981.chunk.css.map": "/trash-keyboard/static/css/main.7f9ba981.chunk.css.map",
-    "static/js/2.eecefb21.chunk.js.LICENSE.txt": "/trash-keyboard/static/js/2.eecefb21.chunk.js.LICENSE.txt",
-    "static/media/backSpace.svg": "/trash-keyboard/static/media/backSpace.b50f4f19.svg",
-    "static/media/shift.svg": "/trash-keyboard/static/media/shift.bd2e35ad.svg"
+    "static/css/main.508f1e6f.chunk.css.map": "/trash-keyboard/static/css/main.508f1e6f.chunk.css.map",
+    "static/js/2.8f5d0082.chunk.js.LICENSE.txt": "/trash-keyboard/static/js/2.8f5d0082.chunk.js.LICENSE.txt",
+    "static/media/backSpace.svg": "/trash-keyboard/static/media/backSpace.e0a1db54.svg",
+    "static/media/shift.svg": "/trash-keyboard/static/media/shift.df9919d5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.972992a9.js",
     "static/css/2.cdee455b.chunk.css",
-    "static/js/2.eecefb21.chunk.js",
-    "static/css/main.7f9ba981.chunk.css",
-    "static/js/main.3498a5a5.chunk.js"
+    "static/js/2.8f5d0082.chunk.js",
+    "static/css/main.508f1e6f.chunk.css",
+    "static/js/main.7bc42d2e.chunk.js"
   ]
 }
