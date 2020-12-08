@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/trash-keyboard/static/css/main.cfa290ce.chunk.css",
-    "main.js": "/trash-keyboard/static/js/main.f4a92602.chunk.js",
-    "main.js.map": "/trash-keyboard/static/js/main.f4a92602.chunk.js.map",
+    "main.js": "/trash-keyboard/static/js/main.fc28a66c.chunk.js",
+    "main.js.map": "/trash-keyboard/static/js/main.fc28a66c.chunk.js.map",
     "runtime-main.js": "/trash-keyboard/static/js/runtime-main.972992a9.js",
     "runtime-main.js.map": "/trash-keyboard/static/js/runtime-main.972992a9.js.map",
     "static/css/2.cdee455b.chunk.css": "/trash-keyboard/static/css/2.cdee455b.chunk.css",
-    "static/js/2.8f5d0082.chunk.js": "/trash-keyboard/static/js/2.8f5d0082.chunk.js",
-    "static/js/2.8f5d0082.chunk.js.map": "/trash-keyboard/static/js/2.8f5d0082.chunk.js.map",
+    "static/js/2.2e943a5e.chunk.js": "/trash-keyboard/static/js/2.2e943a5e.chunk.js",
+    "static/js/2.2e943a5e.chunk.js.map": "/trash-keyboard/static/js/2.2e943a5e.chunk.js.map",
     "index.html": "/trash-keyboard/index.html",
-    "precache-manifest.90e9f5435baeeda322165771c9683ce5.js": "/trash-keyboard/precache-manifest.90e9f5435baeeda322165771c9683ce5.js",
+    "precache-manifest.b4d8868da619b63d94a071620ec52db4.js": "/trash-keyboard/precache-manifest.b4d8868da619b63d94a071620ec52db4.js",
     "service-worker.js": "/trash-keyboard/service-worker.js",
     "static/css/2.cdee455b.chunk.css.map": "/trash-keyboard/static/css/2.cdee455b.chunk.css.map",
     "static/css/main.cfa290ce.chunk.css.map": "/trash-keyboard/static/css/main.cfa290ce.chunk.css.map",
-    "static/js/2.8f5d0082.chunk.js.LICENSE.txt": "/trash-keyboard/static/js/2.8f5d0082.chunk.js.LICENSE.txt",
+    "static/js/2.2e943a5e.chunk.js.LICENSE.txt": "/trash-keyboard/static/js/2.2e943a5e.chunk.js.LICENSE.txt",
     "static/media/backSpace.svg": "/trash-keyboard/static/media/backSpace.e0a1db54.svg",
     "static/media/shift.svg": "/trash-keyboard/static/media/shift.df9919d5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.972992a9.js",
     "static/css/2.cdee455b.chunk.css",
-    "static/js/2.8f5d0082.chunk.js",
+    "static/js/2.2e943a5e.chunk.js",
     "static/css/main.cfa290ce.chunk.css",
-    "static/js/main.f4a92602.chunk.js"
+    "static/js/main.fc28a66c.chunk.js"
   ]
 }
