@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/trash-keyboard/static/css/main.cfa290ce.chunk.css",
-    "main.js": "/trash-keyboard/static/js/main.fc28a66c.chunk.js",
-    "main.js.map": "/trash-keyboard/static/js/main.fc28a66c.chunk.js.map",
+    "main.js": "/trash-keyboard/static/js/main.41354206.chunk.js",
+    "main.js.map": "/trash-keyboard/static/js/main.41354206.chunk.js.map",
     "runtime-main.js": "/trash-keyboard/static/js/runtime-main.972992a9.js",
     "runtime-main.js.map": "/trash-keyboard/static/js/runtime-main.972992a9.js.map",
     "static/css/2.cdee455b.chunk.css": "/trash-keyboard/static/css/2.cdee455b.chunk.css",
     "static/js/2.2e943a5e.chunk.js": "/trash-keyboard/static/js/2.2e943a5e.chunk.js",
     "static/js/2.2e943a5e.chunk.js.map": "/trash-keyboard/static/js/2.2e943a5e.chunk.js.map",
     "index.html": "/trash-keyboard/index.html",
-    "precache-manifest.b4d8868da619b63d94a071620ec52db4.js": "/trash-keyboard/precache-manifest.b4d8868da619b63d94a071620ec52db4.js",
+    "precache-manifest.8d77fc3627326e26f1f398fa55fc9e2b.js": "/trash-keyboard/precache-manifest.8d77fc3627326e26f1f398fa55fc9e2b.js",
     "service-worker.js": "/trash-keyboard/service-worker.js",
     "static/css/2.cdee455b.chunk.css.map": "/trash-keyboard/static/css/2.cdee455b.chunk.css.map",
     "static/css/main.cfa290ce.chunk.css.map": "/trash-keyboard/static/css/main.cfa290ce.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.cdee455b.chunk.css",
     "static/js/2.2e943a5e.chunk.js",
     "static/css/main.cfa290ce.chunk.css",
-    "static/js/main.fc28a66c.chunk.js"
+    "static/js/main.41354206.chunk.js"
   ]
 }

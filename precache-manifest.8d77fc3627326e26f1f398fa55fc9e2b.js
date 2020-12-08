@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a5b03dab0b1d4a8545eb72737a25276b",
+    "revision": "db5aba53bda87de69bc369eebf7f84d8",
     "url": "/trash-keyboard/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/trash-keyboard/static/css/2.cdee455b.chunk.css"
   },
   {
-    "revision": "f1bd7c867164047cdd99",
+    "revision": "4506db80fd5c2e4f7d49",
     "url": "/trash-keyboard/static/css/main.cfa290ce.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/trash-keyboard/static/js/2.2e943a5e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f1bd7c867164047cdd99",
-    "url": "/trash-keyboard/static/js/main.fc28a66c.chunk.js"
+    "revision": "4506db80fd5c2e4f7d49",
+    "url": "/trash-keyboard/static/js/main.41354206.chunk.js"
   },
   {
     "revision": "9271cb9148d0175219ca",
