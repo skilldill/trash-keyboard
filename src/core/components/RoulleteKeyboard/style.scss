@@ -8,20 +8,26 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
+  transition: all .3s;
+  transform: translateY(260px);
 
   .line {
     position: absolute;
-    height: 1px;
-    background-color: #aeaeae;
-    right: 0;
     left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgb(192, 192, 192);
   }
 
   .line-top {
-    top: 90px;
+    top: 84px;
   }
 
   .line-bottom {
-    bottom: 90px;
+    bottom: 84px;
   }
+}
+
+.roullete-keyboard-show {
+  transform: translateY(0px);
 }
