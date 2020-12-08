@@ -33,9 +33,7 @@ export const Roullete = (props) => {
   const lengthLayoutLent = useMemo(() => (62 * (layout.length - 1)) - 84, [layout]);
 
   const handleDragMove = () => {
-    if (stateTranslateY % 62 === 0) {
-      bridge.send("VKWebAppTapticSelectionChanged", {}); 
-    }
+    bridge.send("VKWebAppTapticSelectionChanged", {});
   }
 
   const handleDragEnd = () => {
