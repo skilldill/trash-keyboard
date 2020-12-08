@@ -62,6 +62,14 @@ export const Roullete = (props) => {
     transition : stateTransition ? "all .3s" : "none"
   }), [stateTranslateY])
 
+  const handleClick = (keyValue, keyId) => {
+    const currentFocusId = -(stateTranslateY - 84) / 62;
+
+    if (keyId === currentFocusId) {
+      onClick(keyValue);
+    }
+  }
+
   return (
     <div 
       className="roullete" 
@@ -74,7 +82,7 @@ export const Roullete = (props) => {
         <div 
           className="roullete-key" 
           key={`${keyValue}-${i}`}
-          onClick={() => onClick(keyValue)}
+          onClick={() => handleClick(keyValue, i)}
         >
           <span>
             {keyValue}
