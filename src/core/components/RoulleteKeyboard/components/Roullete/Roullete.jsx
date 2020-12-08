@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
-import brdige from "@vkontakte/vk-bridge";
+import bridge from "@vkontakte/vk-bridge";
 
 import "./style.scss";
 import { useTouch } from "../../../../../shared/hooks";
