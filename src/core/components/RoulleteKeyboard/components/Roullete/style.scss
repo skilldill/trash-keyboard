@@ -1,0 +1,22 @@
+.roullete {
+  // transition: all .3s;
+  
+  &-key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    height: 50px;
+
+    border: 1px solid transparent;
+    padding-bottom: 10px;
+  }
+
+}
