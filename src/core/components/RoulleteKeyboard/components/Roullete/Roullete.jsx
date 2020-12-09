@@ -5,7 +5,7 @@ import { useTouch } from "../../../../../shared/hooks";
 import { CHAR_HEIGHT, INITIAL_TRANSLATE } from "./contants";
 
 export const Roullete = (props) => {
-  const { layout, onClick, startPos, infinity } = props;
+  const { layout, onClick, startPos } = props;
   
   const {
     stateTranslateY,
@@ -29,7 +29,6 @@ export const Roullete = (props) => {
     }
   }, [])
 
-
   const lengthLayoutLent = useMemo(() => (CHAR_HEIGHT * (layout.length - 1)) - INITIAL_TRANSLATE, [layout]);
 
   const handleDragEnd = () => {
@@ -37,12 +36,15 @@ export const Roullete = (props) => {
       const diff = (stateTranslateY - INITIAL_TRANSLATE) % CHAR_HEIGHT;
 
       if (oldY > stateTranslateY) {
+        // Вниз
         setOldY(stateTranslateY - (diff + INITIAL_TRANSLATE));
         addTransitionAnimation();
+
         return setStateTranslateY(stateTranslateY - (diff + CHAR_HEIGHT));
       } 
 
       if (oldY < stateTranslateY) {
+        // Наверх
         setOldY(stateTranslateY - diff);
         addTransitionAnimation();
         return setStateTranslateY(stateTranslateY - diff);
