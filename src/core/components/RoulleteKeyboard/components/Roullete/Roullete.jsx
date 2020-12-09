@@ -1,8 +1,8 @@
 import React, { useMemo, useState, useEffect } from "react";
-import bridge from "@vkontakte/vk-bridge";
 
 import "./style.scss";
 import { useTouch } from "../../../../../shared/hooks";
+import { CHAR_HEIGHT, INITIAL_TRANSLATE } from "./contants";
 
 export const Roullete = (props) => {
   const { layout, onClick, startPos } = props;
@@ -17,29 +17,29 @@ export const Roullete = (props) => {
     handleTouchStart,
     handleTouchMove,
     handleTouchEnd
-  } = useTouch({ startY: 84 });
+  } = useTouch({ startY: INITIAL_TRANSLATE });
 
-  const [oldY, setOldY] = useState(84);
+  const [oldY, setOldY] = useState(INITIAL_TRANSLATE);
 
   useEffect(() => {
     if (!!startPos) {
-      setStateTranslateY(84 - (startPos * 62));
+      setStateTranslateY(INITIAL_TRANSLATE - (startPos * CHAR_HEIGHT));
     } else {
-      setStateTranslateY(84);
+      setStateTranslateY(INITIAL_TRANSLATE);
     }
   }, [])
 
 
-  const lengthLayoutLent = useMemo(() => (62 * (layout.length - 1)) - 84, [layout]);
+  const lengthLayoutLent = useMemo(() => (CHAR_HEIGHT * (layout.length - 1)) - INITIAL_TRANSLATE, [layout]);
 
   const handleDragEnd = () => {
-    if (stateTranslateY > -lengthLayoutLent && stateTranslateY < 84) {
-      const diff = (stateTranslateY - 84) % 62;
+    if (stateTranslateY > -lengthLayoutLent && stateTranslateY < INITIAL_TRANSLATE) {
+      const diff = (stateTranslateY - INITIAL_TRANSLATE) % CHAR_HEIGHT;
 
       if (oldY > stateTranslateY) {
-        setOldY(stateTranslateY - (diff + 84));
+        setOldY(stateTranslateY - (diff + INITIAL_TRANSLATE));
         addTransitionAnimation();
-        return setStateTranslateY(stateTranslateY - (diff + 62));
+        return setStateTranslateY(stateTranslateY - (diff + CHAR_HEIGHT));
       } 
 
       if (oldY < stateTranslateY) {
@@ -49,10 +49,10 @@ export const Roullete = (props) => {
       }
     }
 
-    if (stateTranslateY > 84) {
-      setOldY(84);
+    if (stateTranslateY > INITIAL_TRANSLATE) {
+      setOldY(INITIAL_TRANSLATE);
       addTransitionAnimation();
-      return setStateTranslateY(84);
+      return setStateTranslateY(INITIAL_TRANSLATE);
     }
 
     if (stateTranslateY < -lengthLayoutLent) {
@@ -68,7 +68,7 @@ export const Roullete = (props) => {
   }), [stateTranslateY])
 
   const handleClick = (keyObj, keyId) => {
-    const currentFocusId = -(stateTranslateY - 84) / 62;
+    const currentFocusId = -(stateTranslateY - INITIAL_TRANSLATE) / CHAR_HEIGHT;
 
     if (keyId === currentFocusId) {
       onClick(keyObj);
