@@ -5,7 +5,7 @@ import { useTouch } from "../../../../../shared/hooks";
 import { CHAR_HEIGHT, INITIAL_TRANSLATE } from "./contants";
 
 export const Roullete = (props) => {
-  const { layout, onClick, startPos } = props;
+  const { layout, onClick, startPos, infinity } = props;
   
   const {
     stateTranslateY,

@@ -10,7 +10,7 @@ import { Roullete } from "./components";
 export const RoulleteKeyboard = (props) => {
   const { layouts, onChange, value, show } = props;
 
-  // layout = { kyes: [{ value, type: 'char' | 'action', actionType? }, ...], startPos: Int }
+  // layout = { kyes: [{ value, type: 'char' | 'action', actionType? }, ...], startPos?: Int, }
 
   const handleChange = (keyObj) => {
     if (keyObj.type === 'char') {
@@ -50,6 +50,7 @@ export const RoulleteKeyboard = (props) => {
           layout={layout.keys} 
           onClick={handleChange} 
           startPos={!!layout.startPos ? layout.startPos : 0} 
+          
         />
       ))}
     </div>
