@@ -24,6 +24,7 @@ export const Roullete = (props) => {
   useEffect(() => {
     if (!!startPos) {
       setStateTranslateY(INITIAL_TRANSLATE - (startPos * CHAR_HEIGHT));
+      setOldY(INITIAL_TRANSLATE - (startPos * CHAR_HEIGHT));
     } else {
       setStateTranslateY(INITIAL_TRANSLATE);
     }
@@ -34,20 +35,54 @@ export const Roullete = (props) => {
   const handleDragEnd = () => {
     if (stateTranslateY > -lengthLayoutLent && stateTranslateY < INITIAL_TRANSLATE) {
       const diff = (stateTranslateY - INITIAL_TRANSLATE) % CHAR_HEIGHT;
+      const diffTranslate = Math.abs(oldY - stateTranslateY);
 
-      if (oldY > stateTranslateY) {
-        // Вниз
-        setOldY(stateTranslateY - (diff + INITIAL_TRANSLATE));
-        addTransitionAnimation();
+      if (diffTranslate < (CHAR_HEIGHT * 2.5)) {
+        if (oldY > stateTranslateY) {
+          // Вниз
+          setOldY(stateTranslateY - (diff + CHAR_HEIGHT));
+          addTransitionAnimation();
 
-        return setStateTranslateY(stateTranslateY - (diff + CHAR_HEIGHT));
-      } 
+          return setStateTranslateY(stateTranslateY - (diff + CHAR_HEIGHT));
+        } 
+  
+        if (oldY < stateTranslateY) {
+          // Наверх
+          setOldY(stateTranslateY - diff);
+          addTransitionAnimation();
+          return setStateTranslateY(stateTranslateY - diff);
+        }
+      } else {
+        if (oldY > stateTranslateY) {
+          const nextPosition = stateTranslateY - (diff + (CHAR_HEIGHT * 2));
 
-      if (oldY < stateTranslateY) {
-        // Наверх
-        setOldY(stateTranslateY - diff);
-        addTransitionAnimation();
-        return setStateTranslateY(stateTranslateY - diff);
+          if (nextPosition < -lengthLayoutLent) {
+            setOldY(-lengthLayoutLent);
+            addTransitionAnimation();
+            return setStateTranslateY(-lengthLayoutLent);
+          }
+
+          // Вниз
+          setOldY(nextPosition);
+          addTransitionAnimation();
+  
+          return setStateTranslateY(nextPosition);
+        } 
+  
+        if (oldY < stateTranslateY) {
+          const nextPosition = stateTranslateY - diff + CHAR_HEIGHT;
+
+          if (nextPosition > INITIAL_TRANSLATE) {
+            setOldY(INITIAL_TRANSLATE);
+            addTransitionAnimation();
+            return setStateTranslateY(INITIAL_TRANSLATE);
+          }
+
+          // Наверх
+          setOldY(stateTranslateY - diff + CHAR_HEIGHT);
+          addTransitionAnimation();
+          return setStateTranslateY(stateTranslateY - diff + CHAR_HEIGHT);
+        }
       }
     }
 
