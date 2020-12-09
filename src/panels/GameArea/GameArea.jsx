@@ -6,7 +6,9 @@ import { Keyboard, RoulleteKeyboard } from "../../core/components";
 import { generateLayout } from "../../core/LayoutsGenerator";
 import { PANEL_NAMES } from "../";
 import { GAME_TYPES, MAX_LAYOUTS } from "../../shared/constants";
+import { ALPHABET } from "../../shared/constants/keyboardLayputs";
 import { getRandomInt, timerSelfDestroy } from "../../shared/utils";
+import { BackSpaceIcon } from "../../assets/icons";
 
 export const GameArea = ({ id }) => {
     const { setActivePanel, params } = useContext(PanelRoutingsContext);
@@ -75,7 +77,20 @@ export const GameArea = ({ id }) => {
     
     const keyboard = useMemo(() => {
         if (gameType === GAME_TYPES.roulletKeyboard) {
-            return <RoulleteKeyboard show={showKeyboard} onChange={setTypedText} value={typedText} />
+            return (
+                <RoulleteKeyboard 
+                    show={showKeyboard} 
+                    onChange={setTypedText} 
+                    value={typedText}
+                    layouts={[
+                        { keys: [{value: '_', type: 'char'}] },
+                        { keys: ALPHABET, startPos: getRandomInt(0, ALPHABET.length - 1) },
+                        { keys: ALPHABET, startPos: getRandomInt(0, ALPHABET.length - 1) },
+                        { keys: ALPHABET, startPos: getRandomInt(0, ALPHABET.length - 1) },
+                        { keys: [{ type: "action", actionType: "backSpace", value: BackSpaceIcon }] },
+                    ]}
+                />
+            )
         }
 
         return (
